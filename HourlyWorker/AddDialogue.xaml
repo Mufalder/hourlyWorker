@@ -1,0 +1,34 @@
+﻿<Window x:Class="HourlyWorker.AddDialogue"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HourlyWorker"
+        mc:Ignorable="d"
+        Title="Add Work Project" Height="120" Width="250"
+        ResizeMode="NoResize">
+    <!--Style="{DynamicResource CustomToolWindowStyle}"-->
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="25">
+            <TextBox x:Name="NameInput" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" MaxLength="20" VerticalContentAlignment="Center" VerticalAlignment="Stretch" TextChanged="NameInput_TextChanged"/>
+            <TextBlock Margin="4" Foreground="LightSteelBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="Enter project name..." TextAlignment="Left" Visibility="{Binding ElementName=NameInput, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" IsHitTestVisible="False"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AddButton" Grid.Column="0" Content="Add" Margin="4" Click="AddButton_Click" IsEnabled="False"/>
+            <Button x:Name="CancelButton" Grid.Column="1" Content="Cancel" Margin="4" Click="CancelButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>
