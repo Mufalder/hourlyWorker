@@ -133,5 +133,24 @@ namespace HourlyWorker
         {
             Minutes += add;
         }
+
+        /// <summary>
+        /// Reset the time
+        /// </summary>
+        public void Reset()
+        {
+            hours = minutes = 0;
+            onChanged?.Invoke(this);
+        }
+
+        /// <summary>
+        /// Edit the time span.
+        /// </summary>
+        public void Edit(int hours, int minutes)
+        {
+            this.hours = hours;
+            this.minutes = minutes;
+            onChanged?.Invoke(this);
+        }
     }
 }

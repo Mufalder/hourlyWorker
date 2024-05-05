@@ -69,9 +69,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Width="20" Content="+" ToolTip="Increment by one hour" Click="Increment"/>
-                                <Button Width="20" Content="-" ToolTip="Decrement by one hour" Click="Decrement"/>
+                                <Button Width="50" Content="Edit" ToolTip="Increment by one hour" Click="Edit"/>
                                 <Button Width="50" Content="{Binding Path=Counting, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource CountingConverter}}" Click="InvokeProject"/>
+                                <Button Width="50" Content="Reset" ToolTip="Reset time" Click="Reset"/>
                                 <Button Width="50" Content="Delete" Click="DeleteProject"/>
                             </StackPanel>
                         </DataTemplate>
@@ -90,7 +90,7 @@
             <Button x:Name="AddButton" Grid.Column="0" Content="Add" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Click="AddButton_Click" MinWidth="100"/>
             <CheckBox x:Name="CheckBoxNotifications" Grid.Column="1" Content="Show notifications" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Show notification when an hour is passed?" IsChecked="{Binding ElementName=WindowMain, Path=ShowNotifications, Mode=TwoWay}"/>
             <!--<CheckBox x:Name="NightModeCheckBox" Grid.Column="2" Content="Night mode" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding ElementName=WindowMain, Path=NightMode, Mode=TwoWay}"/-->
-            <CheckBox x:Name="CheckBoxCursorLook" Grid.Column="2" Content="Look for AFK" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Stop projects if user is AFK for 3 minutes." IsChecked="{Binding ElementName=WindowMain, Path=LookForCursor, Mode=TwoWay}"/>
+            <!--<CheckBox x:Name="CheckBoxCursorLook" Grid.Column="2" Content="Look for AFK" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Stop projects if user is AFK for 3 minutes." IsChecked="{Binding ElementName=WindowMain, Path=LookForCursor, Mode=TwoWay}"/>/-->
         </Grid>
     </Grid>
 </Window>

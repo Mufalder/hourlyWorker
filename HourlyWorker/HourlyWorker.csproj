@@ -120,11 +120,18 @@
     </Compile>
     <Compile Include="CountingConverter.cs" />
     <Compile Include="CustomSpan.cs" />
+    <Compile Include="EditDialogue.xaml.cs">
+      <DependentUpon>EditDialogue.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\DarkTheme.xaml.cs" />
     <Compile Include="Resources\LightTheme.xaml.cs" />
     <Compile Include="SaveLoad.cs" />
     <Compile Include="WorkProject.cs" />
     <Page Include="AddDialogue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditDialogue.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

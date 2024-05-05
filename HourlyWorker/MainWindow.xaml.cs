@@ -111,6 +111,8 @@ namespace HourlyWorker
         private System.Drawing.Point prevCursorPoint;
         private int samePosition = 0;
 
+        public WorkProject EditWorkProject { get; private set; }
+
         /// <summary>
         /// Window initialization.
         /// </summary>
@@ -309,21 +311,22 @@ namespace HourlyWorker
         }
 
         /// <summary>
-        /// Increments the work project timespan by an hour.
+        /// Reset the work project time.
         /// </summary>
-        private void Increment(object sender, RoutedEventArgs e)
+        private void Reset(object sender, RoutedEventArgs e)
         {
             WorkProject wp = GetWorkProject(sender);
-            wp.TimeSpan.AddHours();
+            wp.TimeSpan.Reset();
         }
 
         /// <summary>
-        /// Decrements the work project timespan by an hour.
+        /// Edit the work project time.
         /// </summary>
-        private void Decrement(object sender, RoutedEventArgs e)
+        private void Edit(object sender, RoutedEventArgs e)
         {
-            WorkProject wp = GetWorkProject(sender);
-            wp.TimeSpan.AddHours(-1);
+            EditWorkProject = GetWorkProject(sender);
+            EditDialogue editDialogue = new EditDialogue();
+            editDialogue.ShowDialog();
         }
 
         /// <summary>
