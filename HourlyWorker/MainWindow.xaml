@@ -69,7 +69,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Width="50" Content="Edit" ToolTip="Increment by one hour" Click="Edit"/>
+                                <Button Width="50" Content="Edit" ToolTip="Edit work project time" Click="Edit"/>
                                 <Button Width="50" Content="{Binding Path=Counting, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource CountingConverter}}" Click="InvokeProject"/>
                                 <Button Width="50" Content="Reset" ToolTip="Reset time" Click="Reset"/>
                                 <Button Width="50" Content="Delete" Click="DeleteProject"/>
